@@ -1,0 +1,725 @@
+[
+  {
+    "id": "d_seed_01",
+    "status": "pending",
+    "agent": "support-agent",
+    "channel": "email",
+    "action": "reply",
+    "title": "Export to CSV is timing out",
+    "context": {
+      "author": "Dana K.",
+      "text": "Hi, the CSV export on our workspace has been spinning for 20 minutes. We need the report for a board meeting tomorrow morning. Is there a workaround?",
+      "url": "https://support.example.com/tickets/1042"
+    },
+    "draft": "Hi Dana,\n\nSorry about that. Exports over 50,000 rows run in the background, and the progress bar does not update for them, which is a bug we are fixing.\n\nYour export finished at 09:14 and is in Settings > Exports. If you need it filtered to one quarter, the Date filter on the report page cuts the file size by about 70%.\n\nI'll check back tomorrow at 8am to make sure you have what you need for the meeting.",
+    "rationale": "Customer has a hard deadline tomorrow; the export actually completed, so the answer is concrete.",
+    "sources": [
+      "kb/exports-large-workspaces",
+      "ticket-history/1042"
+    ],
+    "tags": [
+      "synthetic",
+      "billing-tier:team"
+    ],
+    "scores": {
+      "confidence": 92,
+      "relevance": 95,
+      "urgency": 90,
+      "risk": 8
+    },
+    "createdAt": "2026-10-29T20:40:00.000Z",
+    "updatedAt": "2026-10-29T20:40:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_02",
+    "status": "pending",
+    "agent": "support-agent",
+    "channel": "email",
+    "action": "reply",
+    "title": "Refund request after annual renewal",
+    "context": {
+      "author": "Marcus T.",
+      "text": "We were auto-renewed for a year but we stopped using the product in August. Can we get a refund?",
+      "url": "https://support.example.com/tickets/1047"
+    },
+    "draft": "Hi Marcus,\n\nThanks for flagging this. Your plan renewed on 2 October, and our policy allows a full refund within 30 days of an annual renewal, so you're inside the window.\n\nI've started the refund to the card ending 4412. It usually shows within 5 to 10 business days. Your workspace stays read-only for 90 days in case you want to export anything.",
+    "rationale": "Within refund window per policy. Agent has not confirmed the card digits with billing.",
+    "sources": [
+      "policy/refunds-annual",
+      "billing/account-lookup"
+    ],
+    "tags": [
+      "synthetic",
+      "billing",
+      "refund"
+    ],
+    "scores": {
+      "confidence": 78,
+      "relevance": 90,
+      "urgency": 60,
+      "risk": 45
+    },
+    "createdAt": "2026-10-29T21:17:00.000Z",
+    "updatedAt": "2026-10-29T21:17:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_03",
+    "status": "pending",
+    "agent": "support-agent",
+    "channel": "email",
+    "action": "reply",
+    "title": "SSO login loop",
+    "context": {
+      "author": "Ifeoma A.",
+      "text": "After enabling SSO our users get redirected back to the login page over and over.",
+      "url": "https://support.example.com/tickets/1051"
+    },
+    "draft": "Hi Ifeoma,\n\nA login loop right after enabling SSO is almost always the callback URL. In your identity provider, the reply URL needs to be exactly https://app.example.com/sso/callback, with no trailing slash.\n\nIf that's already set, send me the timestamp of one failed attempt and I'll pull the log for it.",
+    "rationale": "Most common cause per KB; asks for one piece of data if it isn't that.",
+    "sources": [
+      "kb/sso-troubleshooting"
+    ],
+    "tags": [
+      "synthetic",
+      "sso",
+      "enterprise"
+    ],
+    "scores": {
+      "confidence": 88,
+      "relevance": 92,
+      "urgency": 80,
+      "risk": 12
+    },
+    "createdAt": "2026-10-29T21:54:00.000Z",
+    "updatedAt": "2026-10-29T21:54:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_04",
+    "status": "pending",
+    "agent": "support-agent",
+    "channel": "chat",
+    "action": "message",
+    "title": "Is there a mobile app?",
+    "context": {
+      "author": "Visitor 3381",
+      "text": "do you have an app for android",
+      "url": "https://app.example.com/chat/3381"
+    },
+    "draft": "Not a native one yet. The web app works on Android Chrome and you can add it to your home screen from the browser menu. A native app is on the roadmap but there's no date I can promise.",
+    "rationale": "Honest answer, no roadmap commitment.",
+    "sources": [
+      "kb/mobile"
+    ],
+    "tags": [
+      "synthetic",
+      "pre-sales"
+    ],
+    "scores": {
+      "confidence": 90,
+      "relevance": 70,
+      "urgency": 40,
+      "risk": 10
+    },
+    "createdAt": "2026-10-29T22:31:00.000Z",
+    "updatedAt": "2026-10-29T22:31:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_05",
+    "status": "pending",
+    "agent": "social-agent",
+    "channel": "x",
+    "action": "reply",
+    "title": "Reply: thread on approval steps for AI agents",
+    "context": {
+      "author": "@demo_rae",
+      "text": "Hot take: every AI agent that sends anything to a customer needs a human approval step for at least the first month. Change my mind.",
+      "url": "https://social.example.com/demo_rae/status/1001"
+    },
+    "draft": "Agree, and the first month tells you which approvals to keep. We log every edit the reviewer makes. Drafts that get approved untouched three weeks running are candidates for auto-send; drafts that keep getting rewritten tell you what the agent doesn't know yet.",
+    "rationale": "On-topic for the product; adds a specific practice rather than agreeing.",
+    "sources": [
+      "notes/approval-metrics"
+    ],
+    "tags": [
+      "synthetic",
+      "agents",
+      "hitl"
+    ],
+    "scores": {
+      "confidence": 86,
+      "relevance": 94,
+      "urgency": 75,
+      "risk": 15
+    },
+    "createdAt": "2026-10-29T23:08:00.000Z",
+    "updatedAt": "2026-10-29T23:08:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_06",
+    "status": "pending",
+    "agent": "social-agent",
+    "channel": "x",
+    "action": "reply",
+    "title": "Reply: complaint about our pricing page",
+    "context": {
+      "author": "@demo_nadia",
+      "text": "Why do SaaS pricing pages still hide the enterprise price? Just tell me the number.",
+      "url": "https://social.example.com/demo_nadia/status/1002"
+    },
+    "draft": "Fair point. Ours is $24 per seat per month on annual, and enterprise is the same price plus SSO and audit logs. We should make that clearer on the page.",
+    "rationale": "Direct, but quoting a price publicly may conflict with sales; flagged for review.",
+    "sources": [
+      "pricing/2026-q4"
+    ],
+    "tags": [
+      "synthetic",
+      "pricing"
+    ],
+    "scores": {
+      "confidence": 72,
+      "relevance": 80,
+      "urgency": 55,
+      "risk": 48
+    },
+    "createdAt": "2026-10-29T23:45:00.000Z",
+    "updatedAt": "2026-10-29T23:45:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_07",
+    "status": "pending",
+    "agent": "social-agent",
+    "channel": "x",
+    "action": "post",
+    "title": "Weekly product update",
+    "draft": "Shipped this week:\n- Background exports for large workspaces\n- SSO callback check in the setup wizard\n- Approval queue now shows who edited a draft\n\nFull notes: https://example.com/changelog/2026-44",
+    "rationale": "Weekly cadence; all three items are live per the changelog.",
+    "sources": [
+      "changelog/2026-44"
+    ],
+    "tags": [
+      "synthetic",
+      "changelog"
+    ],
+    "scores": {
+      "confidence": 94,
+      "relevance": 85,
+      "urgency": 60,
+      "risk": 5
+    },
+    "createdAt": "2026-10-30T00:22:00.000Z",
+    "updatedAt": "2026-10-30T00:22:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_08",
+    "status": "pending",
+    "agent": "social-agent",
+    "channel": "linkedin",
+    "action": "comment",
+    "title": "Comment: post on customer support metrics",
+    "context": {
+      "author": "Sam O.",
+      "text": "We cut first-response time from 9 hours to 40 minutes by letting AI draft every reply. Quality stayed flat.",
+      "url": "https://social.example.com/in/demo-sam/posts/2001"
+    },
+    "draft": "Interesting result. How are you measuring quality staying flat: CSAT, reopen rate, or reviewer edits? We found reopen rate moved before CSAT did, by about two weeks.",
+    "rationale": "Good question that invites a reply. The 'two weeks' claim isn't in sources.",
+    "sources": [
+      "notes/support-metrics"
+    ],
+    "tags": [
+      "synthetic",
+      "support",
+      "metrics"
+    ],
+    "scores": {
+      "confidence": 70,
+      "relevance": 88,
+      "urgency": 50,
+      "risk": 35
+    },
+    "createdAt": "2026-10-30T00:59:00.000Z",
+    "updatedAt": "2026-10-30T00:59:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_09",
+    "status": "pending",
+    "agent": "sales-agent",
+    "channel": "email",
+    "action": "follow-up",
+    "title": "Follow-up after demo",
+    "context": {
+      "author": "Lena R., Ops Lead (fictional logistics firm)",
+      "text": "Demo held Tuesday. Asked about audit logs and whether drafts can be routed to different reviewers by channel.",
+      "url": "https://crm.example.com/deals/310"
+    },
+    "draft": "Hi Lena,\n\nThanks for the time on Tuesday. On your two questions:\n\n1. Audit logs: every approve, edit and reject is recorded with the reviewer and timestamp, and exportable as CSV.\n2. Routing by channel: not today. Each queue has one set of reviewers. Two queues (one for email, one for social) is the current workaround.\n\nWould a 20-minute call next week to set up a trial queue help?",
+    "rationale": "Answers both questions from the call notes; honest about the routing gap.",
+    "sources": [
+      "crm/deals/310/notes",
+      "docs/audit-log"
+    ],
+    "tags": [
+      "synthetic",
+      "sales",
+      "follow-up"
+    ],
+    "scores": {
+      "confidence": 89,
+      "relevance": 93,
+      "urgency": 70,
+      "risk": 10
+    },
+    "createdAt": "2026-10-30T01:36:00.000Z",
+    "updatedAt": "2026-10-30T01:36:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_10",
+    "status": "pending",
+    "agent": "sales-agent",
+    "channel": "email",
+    "action": "email",
+    "title": "First touch: inbound trial sign-up",
+    "context": {
+      "author": "Theo M., Founder (fictional design studio)",
+      "text": "Signed up for a trial yesterday. Team size 6. Used the email channel twice.",
+      "url": "https://crm.example.com/leads/522"
+    },
+    "draft": "Hi Theo,\n\nI saw you set up the email queue yesterday. One thing small teams often miss: you can set a confidence threshold so only low-confidence drafts wait for review and the rest go straight to the export.\n\nHappy to help you pick a threshold if useful.",
+    "rationale": "Product-led nudge tied to what the user did; describes a feature that isn't built yet.",
+    "sources": [
+      "product-analytics/trial-522"
+    ],
+    "tags": [
+      "synthetic",
+      "sales",
+      "trial"
+    ],
+    "scores": {
+      "confidence": 64,
+      "relevance": 75,
+      "urgency": 40,
+      "risk": 55
+    },
+    "createdAt": "2026-10-30T02:13:00.000Z",
+    "updatedAt": "2026-10-30T02:13:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_11",
+    "status": "pending",
+    "agent": "sales-agent",
+    "channel": "email",
+    "action": "follow-up",
+    "title": "Second follow-up, no reply",
+    "context": {
+      "author": "Grace H., COO (fictional dental clinic)",
+      "text": "Sent first email 9 days ago, no reply.",
+      "url": "https://crm.example.com/leads/498"
+    },
+    "draft": "Hi Grace,\n\nFollowing up once on my note last week. If reviewing patient-reminder messages before they go out isn't a priority right now, no problem, and I won't email again.",
+    "rationale": "Polite close-out; respects the two-touch rule.",
+    "sources": [
+      "crm/leads/498"
+    ],
+    "tags": [
+      "synthetic",
+      "sales",
+      "follow-up"
+    ],
+    "scores": {
+      "confidence": 91,
+      "relevance": 70,
+      "urgency": 30,
+      "risk": 8
+    },
+    "createdAt": "2026-10-30T02:50:00.000Z",
+    "updatedAt": "2026-10-30T02:50:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_12",
+    "status": "pending",
+    "agent": "community-agent",
+    "channel": "forum",
+    "action": "reply",
+    "title": "Forum: webhook retries",
+    "context": {
+      "author": "demo_river",
+      "text": "Do webhooks retry if my endpoint returns 500? How many times?",
+      "url": "https://community.example.com/t/webhook-retries/88"
+    },
+    "draft": "Yes. A 5xx or a timeout (10s) is retried 5 times with exponential backoff: 1, 2, 4, 8 and 16 minutes. A 4xx is not retried. Each attempt carries the same X-Delivery-Id header so you can dedupe on your side.",
+    "rationale": "Factual answer from the API docs.",
+    "sources": [
+      "docs/webhooks#retries"
+    ],
+    "tags": [
+      "synthetic",
+      "api",
+      "webhooks"
+    ],
+    "scores": {
+      "confidence": 95,
+      "relevance": 90,
+      "urgency": 45,
+      "risk": 5
+    },
+    "createdAt": "2026-10-30T03:27:00.000Z",
+    "updatedAt": "2026-10-30T03:27:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_13",
+    "status": "pending",
+    "agent": "community-agent",
+    "channel": "forum",
+    "action": "reply",
+    "title": "Forum: feature request for dark mode",
+    "context": {
+      "author": "demo_jo",
+      "text": "+1 for dark mode, my eyes at 2am",
+      "url": "https://community.example.com/t/dark-mode/12"
+    },
+    "draft": "Noted, and thanks for the +1. It's tracked on the public roadmap as 'Theme support'. Votes there are what we use to order the list.",
+    "rationale": "Low stakes, routes to roadmap.",
+    "sources": [
+      "roadmap/theme-support"
+    ],
+    "tags": [
+      "synthetic",
+      "feature-request"
+    ],
+    "scores": {
+      "confidence": 93,
+      "relevance": 60,
+      "urgency": 20,
+      "risk": 5
+    },
+    "createdAt": "2026-10-30T04:04:00.000Z",
+    "updatedAt": "2026-10-30T04:04:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_14",
+    "status": "pending",
+    "agent": "community-agent",
+    "channel": "forum",
+    "action": "reply",
+    "title": "Forum: angry post about outage",
+    "context": {
+      "author": "demo_k",
+      "text": "Third outage this month. Seriously considering moving off.",
+      "url": "https://community.example.com/t/outage-oct/140"
+    },
+    "draft": "That's a reasonable reaction, and I'm sorry. The status page has the write-ups for all three incidents. The 24 October one was the database failover, and the fix shipped on the 27th.\n\nIf you want, I can ask our infrastructure lead to reply here with what's changed.",
+    "rationale": "Upset user, public thread. Tone matters; human should read closely.",
+    "sources": [
+      "status/incidents-2026-10"
+    ],
+    "tags": [
+      "synthetic",
+      "incident",
+      "churn-risk"
+    ],
+    "scores": {
+      "confidence": 68,
+      "relevance": 85,
+      "urgency": 85,
+      "risk": 60
+    },
+    "createdAt": "2026-10-30T04:41:00.000Z",
+    "updatedAt": "2026-10-30T04:41:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": null,
+      "decidedAt": null
+    }
+  },
+  {
+    "id": "d_seed_15",
+    "status": "approved",
+    "agent": "support-agent",
+    "channel": "email",
+    "action": "reply",
+    "title": "Password reset email not arriving",
+    "context": {
+      "author": "Chen W.",
+      "text": "I've requested a reset three times and nothing arrives.",
+      "url": "https://support.example.com/tickets/1030"
+    },
+    "draft": "Hi Chen,\n\nYour address had a temporary bounce flag from a full inbox last week, which blocks resets. I've cleared it, so the next reset email should arrive within a minute. Check spam if it doesn't.",
+    "rationale": "Bounce flag confirmed in mail logs.",
+    "sources": [
+      "mail-logs/1030"
+    ],
+    "tags": [
+      "synthetic",
+      "account"
+    ],
+    "scores": {
+      "confidence": 93,
+      "relevance": 95,
+      "urgency": 80,
+      "risk": 6
+    },
+    "createdAt": "2026-10-30T05:18:00.000Z",
+    "updatedAt": "2026-10-30T09:14:00.000Z",
+    "review": {
+      "finalText": "Hi Chen,\n\nYour address had a temporary bounce flag from a full inbox last week, which blocks resets. I've cleared it, so the next reset email should arrive within a minute. Check spam if it doesn't.",
+      "edited": false,
+      "note": null,
+      "decidedAt": "2026-10-30T09:14:00.000Z"
+    }
+  },
+  {
+    "id": "d_seed_16",
+    "status": "approved",
+    "agent": "social-agent",
+    "channel": "x",
+    "action": "reply",
+    "title": "Reply: question about data residency",
+    "context": {
+      "author": "@demo_clara",
+      "text": "Does anyone know if Acme Cloud stores data in the EU?",
+      "url": "https://social.example.com/demo_clara/status/1003"
+    },
+    "draft": "Yes. Workspaces created with the EU region store data in Frankfurt, and you can pick the region at sign-up. Details: https://example.com/security/data-residency",
+    "rationale": "Direct question about us; answer is in public docs.",
+    "sources": [
+      "docs/security/data-residency"
+    ],
+    "tags": [
+      "synthetic",
+      "security"
+    ],
+    "scores": {
+      "confidence": 96,
+      "relevance": 92,
+      "urgency": 60,
+      "risk": 4
+    },
+    "createdAt": "2026-10-30T05:55:00.000Z",
+    "updatedAt": "2026-10-30T09:15:00.000Z",
+    "review": {
+      "finalText": "Yes. Workspaces created with the EU region store data in Frankfurt, and you can pick the region at sign-up. Details: https://example.com/security/data-residency",
+      "edited": false,
+      "note": null,
+      "decidedAt": "2026-10-30T09:15:00.000Z"
+    }
+  },
+  {
+    "id": "d_seed_17",
+    "status": "approved",
+    "agent": "sales-agent",
+    "channel": "email",
+    "action": "follow-up",
+    "title": "Proposal follow-up",
+    "context": {
+      "author": "Ravi P., Head of CX (fictional insurer)",
+      "text": "Proposal sent last Thursday for 40 seats.",
+      "url": "https://crm.example.com/deals/301"
+    },
+    "draft": "Hi Ravi,\n\nChecking whether the proposal for 40 seats raised any questions. I can walk your security team through the audit log export this week if that helps the review.",
+    "rationale": "Standard follow-up with a concrete offer.",
+    "sources": [
+      "crm/deals/301"
+    ],
+    "tags": [
+      "synthetic",
+      "sales"
+    ],
+    "scores": {
+      "confidence": 87,
+      "relevance": 85,
+      "urgency": 50,
+      "risk": 10
+    },
+    "createdAt": "2026-10-30T06:32:00.000Z",
+    "updatedAt": "2026-10-30T09:16:00.000Z",
+    "review": {
+      "finalText": "Hi Ravi,\n\nChecking whether the proposal for 40 seats raised any questions. If it helps your security review, I can walk the team through the audit log export on Wednesday or Thursday.",
+      "edited": true,
+      "note": "Offered two specific days.",
+      "decidedAt": "2026-10-30T09:16:00.000Z"
+    }
+  },
+  {
+    "id": "d_seed_18",
+    "status": "rejected",
+    "agent": "social-agent",
+    "channel": "x",
+    "action": "reply",
+    "title": "Reply: competitor comparison thread",
+    "context": {
+      "author": "@demo_devtools",
+      "text": "Which approval-queue tools are people using for AI agents?",
+      "url": "https://social.example.com/demo_devtools/status/1004"
+    },
+    "draft": "We built Acme Cloud for this and it's the best option out there, nothing else comes close!",
+    "rationale": "Self-promotional; agent scored its own risk as high.",
+    "sources": [],
+    "tags": [
+      "synthetic",
+      "promo"
+    ],
+    "scores": {
+      "confidence": 55,
+      "relevance": 70,
+      "urgency": 40,
+      "risk": 70
+    },
+    "createdAt": "2026-10-30T07:09:00.000Z",
+    "updatedAt": "2026-10-30T09:17:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": "Too salesy for a public reply.",
+      "decidedAt": "2026-10-30T09:17:00.000Z"
+    }
+  },
+  {
+    "id": "d_seed_19",
+    "status": "rejected",
+    "agent": "community-agent",
+    "channel": "forum",
+    "action": "reply",
+    "title": "Forum: API rate limits",
+    "context": {
+      "author": "demo_m",
+      "text": "What's the rate limit on the REST API?",
+      "url": "https://community.example.com/t/rate-limits/91"
+    },
+    "draft": "It's unlimited for all plans.",
+    "rationale": "Agent answered from memory; no source.",
+    "sources": [],
+    "tags": [
+      "synthetic",
+      "api"
+    ],
+    "scores": {
+      "confidence": 40,
+      "relevance": 80,
+      "urgency": 30,
+      "risk": 65
+    },
+    "createdAt": "2026-10-30T07:46:00.000Z",
+    "updatedAt": "2026-10-30T09:18:00.000Z",
+    "review": {
+      "finalText": null,
+      "edited": false,
+      "note": "Wrong: limit is 600 requests/min. Needs a source.",
+      "decidedAt": "2026-10-30T09:18:00.000Z"
+    }
+  },
+  {
+    "id": "d_seed_20",
+    "status": "exported",
+    "agent": "support-agent",
+    "channel": "email",
+    "action": "reply",
+    "title": "Invoice address change",
+    "context": {
+      "author": "Olu B.",
+      "text": "Please change the billing address on our invoices to our new office.",
+      "url": "https://support.example.com/tickets/1022"
+    },
+    "draft": "Hi Olu,\n\nDone. Future invoices will use the new address. If you need past invoices reissued with it, reply with the invoice numbers and I'll do that too.",
+    "rationale": "Simple account change, confirmed in billing system.",
+    "sources": [
+      "billing/account-lookup"
+    ],
+    "tags": [
+      "synthetic",
+      "billing"
+    ],
+    "scores": {
+      "confidence": 95,
+      "relevance": 90,
+      "urgency": 40,
+      "risk": 5
+    },
+    "createdAt": "2026-10-30T08:23:00.000Z",
+    "updatedAt": "2026-10-30T09:19:00.000Z",
+    "review": {
+      "finalText": "Hi Olu,\n\nDone. Future invoices will use the new address. If you need past invoices reissued with it, reply with the invoice numbers and I'll do that too.",
+      "edited": false,
+      "note": null,
+      "decidedAt": "2026-10-30T09:19:00.000Z"
+    }
+  }
+]
