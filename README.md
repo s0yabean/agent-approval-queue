@@ -40,6 +40,7 @@ No production numbers are published for this queue, so none are claimed here. It
 What has been checked in this repo, on the synthetic data:
 
 - `npm run build` passes (Next.js 16, TypeScript strict).
+- `npm test` runs 27 vitest tests of the API contract against the real route handlers and the JSON store in a temp directory: submit, list and filter, approve / edit / reject / reset, agent revisions, invalid payloads, auth, duplicates and export-and-retire.
 - Every status code in [docs/api.md](docs/api.md) was exercised with curl against `npm start`: 201, 400, 401 with the secret set, 404, 405, and 409 for duplicates, decided drafts, double approval and re-export.
 - 20 concurrent `POST`s against the JSON store all landed (25 → 45 items), with no lost writes.
 - `scripts/example-agent.mjs` submits drafts, gets `409` on a rerun, and `--collect` exports approved items, showing which ones the reviewer edited.
@@ -52,6 +53,7 @@ Requires Node 20+.
 
 ```bash
 npm install
+npm test               # API contract tests, no server or keys needed
 npm run dev            # http://127.0.0.1:8790
 ```
 
@@ -101,6 +103,7 @@ scripts/
   example-agent.mjs             synthetic agent: submit drafts, collect approved ones
   reset-queue.mjs               restore data/queue.json from the seed
 data/seed.json                  20 synthetic drafts
+test/queue-api.test.ts          API contract tests (vitest, temp-dir JSON store)
 docs/                           api.md, supabase.sql, screenshots
 ```
 
@@ -117,7 +120,7 @@ docs/                           api.md, supabase.sql, screenshots
 - Optimistic concurrency (`updatedAt` check) on the Supabase path, so two reviewers can't overwrite each other.
 - A webhook back to the agent on reject or edit, so the reviewer's note becomes feedback rather than a CSV column.
 - Per-agent edit and reject rates on a small dashboard, and auto-approve for an agent only once its edit rate stays near zero.
-- Tests for `lib/queue.ts` and `lib/dedupe.ts`; today the contract is checked by hand with curl.
+- A concurrency test for the JSON store's write lock; today that was checked by hand with 20 parallel `POST`s.
 
 ## Licence
 

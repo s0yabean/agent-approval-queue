@@ -9,7 +9,8 @@
     "start": "next start --hostname 127.0.0.1 --port 8790",
     "typecheck": "tsc --noEmit",
     "seed": "node scripts/reset-queue.mjs",
-    "agent": "node scripts/example-agent.mjs"
+    "agent": "node scripts/example-agent.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.6",
@@ -22,7 +23,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.9.0"
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.7"
   },
   "engines": {
     "node": ">=20"
