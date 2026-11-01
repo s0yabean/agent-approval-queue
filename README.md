@@ -1,5 +1,7 @@
 # agent-approval-queue
 
+[![CI](https://github.com/s0yabean/agent-approval-queue/actions/workflows/ci.yml/badge.svg)](https://github.com/s0yabean/agent-approval-queue/actions/workflows/ci.yml)
+
 A review queue where AI agents submit drafts and a human approves, edits or rejects them before anything is sent.
 
 ![Review deck with a pending support reply, its source message, the agent's rationale and scores](docs/screenshot-review.png)
